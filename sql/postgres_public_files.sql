@@ -3,7 +3,8 @@ create table files
   id          serial not null
     constraint files_pkey
       primary key,
-  file        varchar(255),
+  name       varchar(255),
+  address_file       varchar(255),
   reminder_id integer
     constraint fk_reminder_id
       references reminder

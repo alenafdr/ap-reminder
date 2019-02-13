@@ -1,0 +1,60 @@
+package net.thumbtack.wintertraining.reminder.model;
+
+import java.net.URL;
+import java.util.Objects;
+
+public class File {
+    private int id;
+    private String name;
+    private String addressFile;
+
+    public File(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddressFile() {
+        return addressFile;
+    }
+
+    public void setAddressFile(String addressFile) {
+        this.addressFile = addressFile;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof File)) return false;
+        File file = (File) o;
+        return getId() == file.getId() &&
+                Objects.equals(getName(), file.getName()) &&
+                Objects.equals(getAddressFile(), file.getAddressFile());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getAddressFile());
+    }
+
+    @Override
+    public String toString() {
+        return "File{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", addressFile='" + addressFile + '\'' +
+                '}';
+    }
+}
