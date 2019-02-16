@@ -1,4 +1,4 @@
-package net.thumbtack.wintertraining.reminder.endpoints;
+package net.thumbtack.wintertraining.reminder.controller;
 
 
 

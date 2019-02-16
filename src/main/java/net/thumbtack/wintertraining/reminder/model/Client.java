@@ -9,7 +9,7 @@ public class Client extends CommonUser {
     private Date dateRegistration;
     private List<Reminder> reminderList;
     private UserSetting userSetting;
-    private List<Schedule> scheduleList;
+    private List<ReminderList> reminderListList;
     private List<Label> labelList;
 
     public Client(){}
@@ -51,12 +51,12 @@ public class Client extends CommonUser {
         this.userSetting = userSetting;
     }
 
-    public List<Schedule> getScheduleList() {
-        return scheduleList;
+    public List<ReminderList> getReminderListList() {
+        return reminderListList;
     }
 
-    public void setScheduleList(List<Schedule> scheduleList) {
-        this.scheduleList = scheduleList;
+    public void setReminderListList(List<ReminderList> reminderListList) {
+        this.reminderListList = reminderListList;
     }
 
     public List<Label> getLabelList() {
@@ -77,13 +77,13 @@ public class Client extends CommonUser {
                 Objects.equals(getDateRegistration(), client.getDateRegistration()) &&
                 Objects.equals(getReminderList(), client.getReminderList()) &&
                 Objects.equals(getUserSetting(), client.getUserSetting()) &&
-                Objects.equals(getScheduleList(), client.getScheduleList()) &&
+                Objects.equals(getReminderListList(), client.getReminderListList()) &&
                 Objects.equals(getLabelList(), client.getLabelList());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getEmail(), getDateRegistration(), getReminderList(), getUserSetting(), getScheduleList(), getLabelList());
+        return Objects.hash(super.hashCode(), getEmail(), getDateRegistration(), getReminderList(), getUserSetting(), getReminderListList(), getLabelList());
     }
 
     @Override
@@ -93,7 +93,7 @@ public class Client extends CommonUser {
                 ", dateRegistration=" + dateRegistration +
                 ", reminderList=" + reminderList +
                 ", userSetting=" + userSetting +
-                ", scheduleList=" + scheduleList +
+                ", reminderListList=" + reminderListList +
                 ", labelList=" + labelList +
                 '}';
     }

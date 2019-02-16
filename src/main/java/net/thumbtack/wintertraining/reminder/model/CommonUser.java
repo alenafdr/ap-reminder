@@ -3,7 +3,7 @@ package net.thumbtack.wintertraining.reminder.model;
 import java.util.Objects;
 
 public class CommonUser {
-    private int id;
+    private long id;
     private String firstName;
     private String lastName;
     private String patronymic;
@@ -15,7 +15,8 @@ public class CommonUser {
     public CommonUser(int id){
         this.id= id;
     }
-    public int getId() {
+
+    public long getId() {
         return id;
     }
 
@@ -67,13 +68,13 @@ public class CommonUser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof CommonUser)) return false;
-        CommonUser commonUser = (CommonUser) o;
-        return getId() == commonUser.getId() &&
-                Objects.equals(getFirstName(), commonUser.getFirstName()) &&
-                Objects.equals(getLastName(), commonUser.getLastName()) &&
-                Objects.equals(getPatronymic(), commonUser.getPatronymic()) &&
-                Objects.equals(getLogin(), commonUser.getLogin()) &&
-                Objects.equals(getPassword(), commonUser.getPassword());
+        CommonUser that = (CommonUser) o;
+        return getId() == that.getId() &&
+                Objects.equals(getFirstName(), that.getFirstName()) &&
+                Objects.equals(getLastName(), that.getLastName()) &&
+                Objects.equals(getPatronymic(), that.getPatronymic()) &&
+                Objects.equals(getLogin(), that.getLogin()) &&
+                Objects.equals(getPassword(), that.getPassword());
     }
 
     @Override

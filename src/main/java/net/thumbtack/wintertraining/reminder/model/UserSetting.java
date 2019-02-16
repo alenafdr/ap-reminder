@@ -3,15 +3,19 @@ package net.thumbtack.wintertraining.reminder.model;
 import java.util.Objects;
 
 public class UserSetting {
-    private int id;
+    private long id;
     private int timezone;
     private int reminder_timelife;
-    private Units units;
+    private TimeUnits units;
 
     public UserSetting(){}
 
-    public int getId() {
+    public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setId(int id) {
@@ -34,11 +38,11 @@ public class UserSetting {
         this.reminder_timelife = reminder_timelife;
     }
 
-    public Units getUnits() {
+    public TimeUnits getUnits() {
         return units;
     }
 
-    public void setUnits(Units units) {
+    public void setUnits(TimeUnits units) {
         this.units = units;
     }
 
@@ -50,7 +54,7 @@ public class UserSetting {
         return getId() == that.getId() &&
                 getTimezone() == that.getTimezone() &&
                 getReminder_timelife() == that.getReminder_timelife() &&
-                getUnits() == that.getUnits();
+                Objects.equals(getUnits(), that.getUnits());
     }
 
     @Override

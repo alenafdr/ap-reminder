@@ -4,13 +4,13 @@ import java.net.URL;
 import java.util.Objects;
 
 public class File {
-    private int id;
+    private long id;
     private String name;
     private String addressFile;
 
     public File(){}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

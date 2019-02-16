@@ -3,12 +3,12 @@ package net.thumbtack.wintertraining.reminder.model;
 import java.util.Objects;
 
 public class Note {
-    private int id;
+    private long id;
     private String content;
 
     public Note(){}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

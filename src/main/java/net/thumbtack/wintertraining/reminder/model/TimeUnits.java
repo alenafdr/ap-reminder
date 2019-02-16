@@ -2,14 +2,18 @@ package net.thumbtack.wintertraining.reminder.model;
 
 import java.util.Objects;
 
-public class Label {
+public class TimeUnits {
     private long id;
     private String name;
 
-    Label(){}
+    public TimeUnits(){}
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setId(int id) {
@@ -27,10 +31,10 @@ public class Label {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Label)) return false;
-        Label label = (Label) o;
-        return getId() == label.getId() &&
-                Objects.equals(getName(), label.getName());
+        if (!(o instanceof TimeUnits)) return false;
+        TimeUnits timeUnits = (TimeUnits) o;
+        return getId() == timeUnits.getId() &&
+                Objects.equals(getName(), timeUnits.getName());
     }
 
     @Override
@@ -40,7 +44,7 @@ public class Label {
 
     @Override
     public String toString() {
-        return "Label{" +
+        return "TimeUnits{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

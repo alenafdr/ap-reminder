@@ -5,25 +5,25 @@ import java.util.List;
 import java.util.Objects;
 
 public class Reminder {
-    private int id;
+    private long id;
     private String name;
     private Date dateCreate;
     private Date dateFinish;
     private Date dateStart;
     private int priority;
     private int repeat;
-    private Units timeUnits;
+    private TimeUnits timeUnits;
     private List<Note> noteList;
     private Status status;
     private List<File> fileList;
     private List<Label> labelList;
-    private Schedule listName;
+    private ReminderList listName;
     private Client owner;
     private Client executor;
 
     public Reminder(){}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -79,11 +79,11 @@ public class Reminder {
         this.repeat = repeat;
     }
 
-    public Units getTimeUnits() {
+    public TimeUnits getTimeUnits() {
         return timeUnits;
     }
 
-    public void setTimeUnits(Units timeUnits) {
+    public void setTimeUnits(TimeUnits timeUnits) {
         this.timeUnits = timeUnits;
     }
 
@@ -119,11 +119,11 @@ public class Reminder {
         this.labelList = labelList;
     }
 
-    public Schedule getListName() {
+    public ReminderList getListName() {
         return listName;
     }
 
-    public void setListName(Schedule listName) {
+    public void setListName(ReminderList listName) {
         this.listName = listName;
     }
 
@@ -155,12 +155,12 @@ public class Reminder {
                 Objects.equals(getDateCreate(), reminder.getDateCreate()) &&
                 Objects.equals(getDateFinish(), reminder.getDateFinish()) &&
                 Objects.equals(getDateStart(), reminder.getDateStart()) &&
-                getTimeUnits() == reminder.getTimeUnits() &&
+                Objects.equals(getTimeUnits(), reminder.getTimeUnits()) &&
                 Objects.equals(getNoteList(), reminder.getNoteList()) &&
-                getStatus() == reminder.getStatus() &&
+                Objects.equals(getStatus(), reminder.getStatus()) &&
                 Objects.equals(getFileList(), reminder.getFileList()) &&
                 Objects.equals(getLabelList(), reminder.getLabelList()) &&
-                getListName() == reminder.getListName() &&
+                Objects.equals(getListName(), reminder.getListName()) &&
                 Objects.equals(getOwner(), reminder.getOwner()) &&
                 Objects.equals(getExecutor(), reminder.getExecutor());
     }
@@ -169,7 +169,6 @@ public class Reminder {
     public int hashCode() {
         return Objects.hash(getId(), getName(), getDateCreate(), getDateFinish(), getDateStart(), getPriority(), getRepeat(), getTimeUnits(), getNoteList(), getStatus(), getFileList(), getLabelList(), getListName(), getOwner(), getExecutor());
     }
-
 
     @Override
     public String toString() {
