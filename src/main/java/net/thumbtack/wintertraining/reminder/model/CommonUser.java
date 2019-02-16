@@ -2,7 +2,7 @@ package net.thumbtack.wintertraining.reminder.model;
 
 import java.util.Objects;
 
-public class User {
+public class CommonUser {
     private int id;
     private String firstName;
     private String lastName;
@@ -10,9 +10,9 @@ public class User {
     private String login;
     private String password;
 
-    public User(){}
+    public CommonUser(){}
 
-    public User(int id){
+    public CommonUser(int id){
         this.id= id;
     }
     public int getId() {
@@ -66,14 +66,14 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return getId() == user.getId() &&
-                Objects.equals(getFirstName(), user.getFirstName()) &&
-                Objects.equals(getLastName(), user.getLastName()) &&
-                Objects.equals(getPatronymic(), user.getPatronymic()) &&
-                Objects.equals(getLogin(), user.getLogin()) &&
-                Objects.equals(getPassword(), user.getPassword());
+        if (!(o instanceof CommonUser)) return false;
+        CommonUser commonUser = (CommonUser) o;
+        return getId() == commonUser.getId() &&
+                Objects.equals(getFirstName(), commonUser.getFirstName()) &&
+                Objects.equals(getLastName(), commonUser.getLastName()) &&
+                Objects.equals(getPatronymic(), commonUser.getPatronymic()) &&
+                Objects.equals(getLogin(), commonUser.getLogin()) &&
+                Objects.equals(getPassword(), commonUser.getPassword());
     }
 
     @Override
@@ -83,7 +83,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "CommonUser{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

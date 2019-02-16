@@ -12,14 +12,14 @@ public class Reminder {
     private Date dateStart;
     private int priority;
     private int repeat;
-    private Units units;
+    private Units timeUnits;
     private List<Note> noteList;
     private Status status;
     private List<File> fileList;
     private List<Label> labelList;
-    private Schedule list;
-    private int owner;
-    private int executor;
+    private Schedule listName;
+    private Client owner;
+    private Client executor;
 
     public Reminder(){}
 
@@ -79,12 +79,12 @@ public class Reminder {
         this.repeat = repeat;
     }
 
-    public Units getUnits() {
-        return units;
+    public Units getTimeUnits() {
+        return timeUnits;
     }
 
-    public void setUnits(Units units) {
-        this.units = units;
+    public void setTimeUnits(Units timeUnits) {
+        this.timeUnits = timeUnits;
     }
 
     public List<Note> getNoteList() {
@@ -119,27 +119,27 @@ public class Reminder {
         this.labelList = labelList;
     }
 
-    public Schedule getList() {
-        return list;
+    public Schedule getListName() {
+        return listName;
     }
 
-    public void setList(Schedule list) {
-        this.list = list;
+    public void setListName(Schedule listName) {
+        this.listName = listName;
     }
 
-    public int getOwner() {
+    public Client getOwner() {
         return owner;
     }
 
-    public void setOwner(int owner) {
+    public void setOwner(Client owner) {
         this.owner = owner;
     }
 
-    public int getExecutor() {
+    public Client getExecutor() {
         return executor;
     }
 
-    public void setExecutor(int executor) {
+    public void setExecutor(Client executor) {
         this.executor = executor;
     }
 
@@ -151,24 +151,25 @@ public class Reminder {
         return getId() == reminder.getId() &&
                 getPriority() == reminder.getPriority() &&
                 getRepeat() == reminder.getRepeat() &&
-                getOwner() == reminder.getOwner() &&
-                getExecutor() == reminder.getExecutor() &&
                 Objects.equals(getName(), reminder.getName()) &&
                 Objects.equals(getDateCreate(), reminder.getDateCreate()) &&
                 Objects.equals(getDateFinish(), reminder.getDateFinish()) &&
                 Objects.equals(getDateStart(), reminder.getDateStart()) &&
-                getUnits() == reminder.getUnits() &&
+                getTimeUnits() == reminder.getTimeUnits() &&
                 Objects.equals(getNoteList(), reminder.getNoteList()) &&
                 getStatus() == reminder.getStatus() &&
                 Objects.equals(getFileList(), reminder.getFileList()) &&
                 Objects.equals(getLabelList(), reminder.getLabelList()) &&
-                getList() == reminder.getList();
+                getListName() == reminder.getListName() &&
+                Objects.equals(getOwner(), reminder.getOwner()) &&
+                Objects.equals(getExecutor(), reminder.getExecutor());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getDateCreate(), getDateFinish(), getDateStart(), getPriority(), getRepeat(), getUnits(), getNoteList(), getStatus(), getFileList(), getLabelList(), getList(), getOwner(), getExecutor());
+        return Objects.hash(getId(), getName(), getDateCreate(), getDateFinish(), getDateStart(), getPriority(), getRepeat(), getTimeUnits(), getNoteList(), getStatus(), getFileList(), getLabelList(), getListName(), getOwner(), getExecutor());
     }
+
 
     @Override
     public String toString() {
@@ -180,12 +181,12 @@ public class Reminder {
                 ", dateStart=" + dateStart +
                 ", priority=" + priority +
                 ", repeat=" + repeat +
-                ", units=" + units +
+                ", timeUnits=" + timeUnits +
                 ", noteList=" + noteList +
                 ", status=" + status +
                 ", fileList=" + fileList +
                 ", labelList=" + labelList +
-                ", list=" + list +
+                ", listName=" + listName +
                 ", owner=" + owner +
                 ", executor=" + executor +
                 '}';

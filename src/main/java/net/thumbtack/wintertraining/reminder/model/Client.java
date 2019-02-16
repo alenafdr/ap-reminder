@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Client extends User {
+public class Client extends CommonUser {
     private String email;
     private Date dateRegistration;
     private List<Reminder> reminderList;
